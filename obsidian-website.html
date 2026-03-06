@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian AI Scalping - บอทเทรดคริปโตอัตโนมัติ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        brand: {
+                            green: '#10b981',
+                            purple: '#8b5cf6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #10b981, #8b5cf6);
+        }
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-obsidian-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="#" class="flex items-center">
+                        <img src="obsidian.png" alt="Obsidian Logo" class="h-10 md:h-12 w-auto object-contain drop-shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-transform hover:scale-105">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#features" class="hover:text-brand-green transition-colors px-3 py-2 rounded-md font-medium">ฟีเจอร์</a>
+                        <a href="#how-it-works" class="hover:text-brand-green transition-colors px-3 py-2 rounded-md font-medium">ระบบทำงานอย่างไร</a>
+                        <a href="#pricing" class="hover:text-brand-green transition-colors px-3 py-2 rounded-md font-medium">ราคาแพ็กเกจ</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://obsidian-trade.streamlit.app/" target="_blank" class="hidden md:inline-block text-gray-300 hover:text-white px-4 py-2 font-medium">เข้าสู่ระบบ</a>
+                    <a href="https://obsidian-trade.streamlit.app/" target="_blank" class="bg-gradient-to-r from-brand-green to-teal-500 hover:from-teal-500 hover:to-brand-green text-white px-6 py-2.5 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-brand-green/30">
+                        ทดลองใช้ฟรี
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxwYXRoIGQ9Ik01NC42MjcgMGEzMCAzMCAwIDEgMCAwIDYwIDMwIDMwIDAgMCAwIDAtNjB6IiBmaWxsPSIjMWUyOTNiIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4=')] opacity-20"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-green/20 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-obsidian-800 border border-gray-700 text-sm font-medium mb-8 text-gray-300">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
+                </span>
+                เชื่อมต่อ API Bitkub ปลอดภัย 100%
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                เทรดคริปโตอัตโนมัติ 24/7 <br class="hidden md:block">
+                ด้วยพลัง <span class="gradient-text">Google Gemini AI</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto mb-10">
+                ระบบ Scalping & DCA อัจฉริยะ วิเคราะห์เทรนด์ ดักจับจุดทำกำไร และล็อคจุดขาดทุนให้อัตโนมัติ ปลดล็อกขีดจำกัดการเทรดของคุณตั้งแต่วันนี้
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://obsidian-trade.streamlit.app/" target="_blank" class="bg-brand-green hover:bg-emerald-500 text-obsidian-900 text-lg px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+                    รับสิทธิ์ทดลองใช้ฟรี 15 วัน
+                </a>
+                <a href="#features" class="bg-obsidian-800 hover:bg-obsidian-700 border border-gray-600 text-white text-lg px-8 py-4 rounded-full font-medium transition-all">
+                    ดูฟีเจอร์ทั้งหมด
+                </a>
+            </div>
+            
+            <div class="mt-16 flex justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <!-- Mockup Logos -->
+                <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-brands fa-google text-2xl"></i> Gemini AI</div>
+                <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-solid fa-shield-halved text-2xl"></i> Bitkub API</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-24 bg-obsidian-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">ฟีเจอร์ที่เหนือกว่าของ <span class="text-brand-green">Obsidian</span></h2>
+                <p class="text-gray-400 text-lg">ออกแบบโดยนักเทรด เพื่อนักเทรด ตอบโจทย์ทุกสภาวะตลาด</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-obsidian-900 p-8 rounded-2xl border border-gray-700 hover:border-brand-green transition-colors group">
+                    <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain text-brand-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Market Analysis</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ดึงข้อมูลเหรียญทั้งหมดมาประมวลผลผ่านอินดิเคเตอร์ 3 ตัว อัปเดตแนวโน้มตลาด (Up/Down) โดยใช้ Google Gemini 2.5 Flash
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-obsidian-900 p-8 rounded-2xl border border-gray-700 hover:border-brand-green transition-colors group">
+                    <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-arrow-trend-up text-brand-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Trailing Stop</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        เมื่อถึงจุด Take Profit ระบบจะยังไม่ขายทันที แต่จะล็อคจุด Peak ใหม่ตามราคาที่ขึ้นไป เพื่อรีดกำไรให้สุดขีดจนกว่ากราฟจะย่อตัว
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-obsidian-900 p-8 rounded-2xl border border-gray-700 hover:border-brand-green transition-colors group">
+                    <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-layer-group text-brand-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Smart Drop DCA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ระบบถัวเฉลี่ยต้นทุนอัตโนมัติเมื่อราคาตกลงตาม % ที่คุณตั้งไว้ เพื่อดึงต้นทุนให้ต่ำลงและหาจังหวะขายทำกำไรได้ไวขึ้น
+                    </p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-obsidian-900 p-8 rounded-2xl border border-gray-700 hover:border-brand-green transition-colors group">
+                    <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-shield-cat text-brand-green text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Bank-Grade Security</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ปลอดภัยด้วยระบบเข้ารหัส API Key ลูกค้า 100% บังคับใช้ Google Authenticator (2FA) และใช้สิทธิ์แค่ "อ่าน" และ "เทรด" เท่านั้น
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Focus -->
+    <div class="py-20 border-t border-b border-gray-800 bg-obsidian-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x600/1e293b/10b981?text=Crypto+Security'" alt="Crypto Security" class="rounded-2xl shadow-2xl opacity-80 border border-gray-700">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/20 text-brand-purple text-sm font-bold mb-6">
+                        <i class="fa-solid fa-lock"></i> TRUST & SECURITY
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">เงินของคุณ อยู่ในกระเป๋าของคุณเสมอ</h2>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex gap-4">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                            <div>
+                                <strong class="text-white block">ไม่มีการฝากเงินเข้าระบบเรา</strong>
+                                เทรดผ่าน API Key ของ Bitkub บัญชีคุณเองโดยตรง 
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                            <div>
+                                <strong class="text-white block">ห้ามเปิดสิทธิ์ถอนเงิน (No Withdrawal Access)</strong>
+                                บอทมีสิทธิ์แค่ดูราคา (Read) และส่งคำสั่งเทรด (Trade) เท่านั้น เราไม่สามารถโอนเงินของคุณได้
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <i class="fa-solid fa-circle-check text-brand-green mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Dashboard อัปเดตเรียลไทม์ทุก 10 วิ</strong>
+                                ควบคุมทุกอย่างได้ดั่งใจ พร้อมปุ่ม Hard Sell กดขายฉุกเฉินรับกำไรทันที
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-24 bg-obsidian-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">เลือกแพ็กเกจที่ใช่สำหรับคุณ</h2>
+                <p class="text-gray-400 text-lg">เริ่มต้นฟรี 15 วัน ไม่มีข้อผูกมัด ยกเลิกได้ตลอดเวลา</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Basic Plan -->
+                <div class="bg-obsidian-900 rounded-3xl p-8 border border-gray-700 relative flex flex-col">
+                    <div class="absolute top-0 right-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-3xl">มือใหม่</div>
+                    <h3 class="text-2xl font-bold mb-2">Basic</h3>
+                    <p class="text-gray-400 text-sm mb-6">เหมาะสำหรับเริ่มต้นรันทิ้งไว้</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-white">฿490</span>
+                        <span class="text-gray-400">/ เดือน</span>
+                    </div>
+                    <div class="bg-brand-green/10 text-brand-green text-sm font-bold text-center py-2 rounded-lg mb-8 border border-brand-green/30">
+                        🔥 ทดลองใช้ฟรี 15 วันแรก
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-green"></i> เทรดสูงสุด <strong>2 คู่เหรียญ</strong></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-green"></i> AI ดึงข้อมูลวิเคราะห์ทุก <strong>15 นาที</strong></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-green"></i> ระบบ Trailing Stop & DCA</li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-green"></i> Real-time Dashboard</li>
+                    </ul>
+                    <a href="https://obsidian-trade.streamlit.app/" target="_blank" class="block w-full text-center bg-obsidian-800 hover:bg-gray-700 text-white font-bold py-3 rounded-xl border border-gray-600 transition-colors">เริ่มทดลองใช้ฟรี</a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-gradient-to-b from-brand-green/20 to-obsidian-900 rounded-3xl p-8 border-2 border-brand-green relative flex flex-col transform md:-translate-y-4 shadow-2xl shadow-brand-green/20">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-green text-obsidian-900 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Pro</h3>
+                    <p class="text-gray-400 text-sm mb-6">สายเทรดจริงจัง กระจายความเสี่ยง</p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-white">฿1,290</span>
+                        <span class="text-gray-400">/ เดือน</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3 text-white"><i class="fa-solid fa-check text-brand-green"></i> เทรดสูงสุด <strong class="text-brand-green text-lg">10 คู่เหรียญ</strong></li>
+                        <li class="flex items-center gap-3 text-white"><i class="fa-solid fa-check text-brand-green"></i> AI ดึงข้อมูลวิเคราะห์ทุก <strong class="text-brand-green text-lg">5 นาที</strong></li>
+                        <li class="flex items-center gap-3 text-white"><i class="fa-solid fa-check text-brand-green"></i> ระบบ Trailing Stop & DCA</li>
+                        <li class="flex items-center gap-3 text-white"><i class="fa-solid fa-check text-brand-green"></i> Real-time Dashboard</li>
+                        <li class="flex items-center gap-3 text-white"><i class="fa-solid fa-check text-brand-green"></i> Paper Trade (โหมดจำลอง)</li>
+                    </ul>
+                    <a href="https://obsidian-trade.streamlit.app/" target="_blank" class="block w-full text-center bg-brand-green hover:bg-emerald-500 text-obsidian-900 font-bold py-4 rounded-xl transition-transform hover:scale-105">สมัครแพ็กเกจ Pro</a>
+                </div>
+
+                <!-- Ultra Plan -->
+                <div class="bg-obsidian-900 rounded-3xl p-8 border border-gray-700 relative flex flex-col">
+                    <h3 class="text-2xl font-bold mb-2">Ultra</h3>
+                    <p class="text-gray-400 text-sm mb-6">Scalper เต็มตัว รับความได้เปรียบสูงสุด</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-white">฿2,990</span>
+                        <span class="text-gray-400">/ เดือน</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-purple"></i> เทรดสูงสุด <strong class="text-brand-purple">50 คู่เหรียญ</strong></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-purple"></i> AI ดึงข้อมูลวิเคราะห์ทุก <strong class="text-brand-purple">1 นาที</strong></li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-green"></i> ระบบ Trailing Stop & DCA</li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-check text-brand-green"></i> Real-time Dashboard</li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fa-solid fa-crown text-yellow-500"></i> Priority Support สายตรงแอดมิน</li>
+                    </ul>
+                    <a href="https://obsidian-trade.streamlit.app/" target="_blank" class="block w-full text-center bg-obsidian-800 hover:bg-brand-purple hover:text-white text-brand-purple font-bold py-3 rounded-xl border border-brand-purple transition-colors">สมัครแพ็กเกจ Ultra</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="py-20 relative">
+        <div class="absolute inset-0 bg-brand-green/10"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">พร้อมให้ AI ช่วยคุณทำกำไรหรือยัง?</h2>
+            <p class="text-xl text-gray-300 mb-10">ใช้เวลาเซ็ตอัพเพียง 5 นาที เชื่อมต่อ Bitkub แล้วปล่อยให้ระบบของเราทำงานแทนคุณตลอด 24 ชั่วโมง</p>
+            <a href="https://obsidian-trade.streamlit.app/" target="_blank" class="inline-flex items-center gap-3 bg-white text-obsidian-900 hover:bg-gray-200 text-lg px-8 py-4 rounded-full font-bold transition-transform hover:scale-105 shadow-xl">
+                สร้างบัญชีผู้ใช้งานทันที <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-obsidian-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <img src="obsidian.png" alt="Obsidian Logo" class="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-transform hover:scale-105">
+                </div>
+                <div class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; 2026 Obsidian AI Scalping Bot. All rights reserved. <br class="md:hidden">
+                    <span class="hidden md:inline">|</span> ไม่ใช่คำแนะนำการลงทุน โปรดศึกษาความเสี่ยง
+                </div>
+                <div class="flex gap-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-brand-green transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-brand-green transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
