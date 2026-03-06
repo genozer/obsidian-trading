@@ -40,9 +40,14 @@
         .glow-effect {
             box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
         }
+        /* Custom Scrollbar for Modals */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #10b981; }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-green selection:text-white">
+<body class="antialiased selection:bg-brand-green selection:text-white relative">
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 bg-obsidian-900/90 backdrop-blur-md border-b border-gray-800">
@@ -51,7 +56,7 @@
                 <div class="flex items-center gap-3">
                     <a href="#" class="flex items-center gap-3">
                         <img src="obsidian.png" alt="Obsidian Logo" class="h-10 md:h-12 w-auto object-contain drop-shadow-[0_0_10px_rgba(16,185,129,0.3)] transition-transform hover:scale-105">
-                        <span class="font-bold text-2xl tracking-wider">OBSIDIAN<span class="text-brand-green">.AI</span></span>
+                        <span class="font-bold text-2xl tracking-wider hidden sm:block">OBSIDIAN<span class="text-brand-green">.AI</span></span>
                     </a>
                 </div>
                 <div class="hidden md:block">
@@ -104,7 +109,6 @@
             </div>
             
             <div class="mt-16 flex justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Mockup Logos -->
                 <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-brands fa-google text-2xl"></i> Gemini AI</div>
                 <div class="flex items-center gap-2 text-xl font-bold"><i class="fa-solid fa-shield-halved text-2xl"></i> Bitkub API</div>
             </div>
@@ -220,7 +224,7 @@
                     <h3 class="text-2xl font-bold mb-2">Basic</h3>
                     <p class="text-gray-400 text-sm mb-6">เหมาะสำหรับเริ่มต้นรันทิ้งไว้</p>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold text-white">฿299</span>
+                        <span class="text-4xl font-bold text-white">฿290</span>
                         <span class="text-gray-400">/ เดือน</span>
                     </div>
                     <div class="bg-brand-green/10 text-brand-green text-sm font-bold text-center py-2 rounded-lg mb-8 border border-brand-green/30">
@@ -242,7 +246,7 @@
                     <h3 class="text-2xl font-bold mb-2 text-white">Pro</h3>
                     <p class="text-gray-400 text-sm mb-6">สายเทรดจริงจัง กระจายความเสี่ยง</p>
                     <div class="mb-6">
-                        <span class="text-5xl font-bold text-white">฿499</span>
+                        <span class="text-5xl font-bold text-white">฿490</span>
                         <span class="text-gray-400">/ เดือน</span>
                     </div>
                     <ul class="space-y-4 mb-8 flex-grow">
@@ -296,21 +300,134 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-3">
                     <img src="obsidian.png" alt="Obsidian Logo" class="h-10 md:h-12 w-auto object-contain drop-shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-transform hover:scale-105">
-                    <span class="font-bold text-xl tracking-wider text-gray-400">OBSIDIAN<span class="text-brand-green">.AI</span></span>
+                    <span class="font-bold text-xl tracking-wider text-gray-400 hidden sm:block">OBSIDIAN<span class="text-brand-green">.AI</span></span>
                 </div>
                 <div class="text-gray-500 text-sm text-center md:text-left">
                     &copy; 2026 Obsidian AI Scalping Bot. All rights reserved. <br class="md:hidden">
                     <span class="hidden md:inline">|</span> ไม่ใช่คำแนะนำการลงทุน โปรดศึกษาความเสี่ยง
                 </div>
+                <!-- ปุ่มกดเรียก Modal ToS และ Privacy -->
                 <div class="flex gap-6 text-sm text-gray-400">
-                    <a href="#" class="hover:text-brand-green transition-colors">Terms of Service</a>
-                    <a href="#" class="hover:text-brand-green transition-colors">Privacy Policy</a>
+                    <a href="javascript:void(0)" onclick="openModal('tos-modal')" class="hover:text-brand-green transition-colors">Terms of Service</a>
+                    <a href="javascript:void(0)" onclick="openModal('privacy-modal')" class="hover:text-brand-green transition-colors">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- ========================================== -->
+    <!-- MODALS (Pop-ups) FOR TOS & PRIVACY POLICY  -->
+    <!-- ========================================== -->
+
+    <!-- Terms of Service Modal -->
+    <div id="tos-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity">
+        <div class="bg-obsidian-900 border border-gray-700 rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-6 border-b border-gray-800">
+                <h3 class="text-2xl font-bold text-white">ข้อตกลงและเงื่อนไขการใช้บริการ (Terms of Service)</h3>
+                <button onclick="closeModal('tos-modal')" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto text-gray-300 space-y-4 text-sm md:text-base">
+                <p>ข้อตกลงและเงื่อนไขนี้ควบคุมการใช้งานแพลตฟอร์ม "Obsidian AI Scalping Bot" การสมัครสมาชิกและใช้งานถือว่าคุณยอมรับข้อตกลงเหล่านี้อย่างครบถ้วน</p>
+                
+                <h4 class="text-brand-green font-bold text-lg mt-4">1. ขอบเขตการให้บริการ</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>แพลตฟอร์มเป็น "เครื่องมือทางเทคโนโลยี" ช่วยส่งคำสั่งซื้อขายอัตโนมัติ ไม่ใช่ผู้ให้คำแนะนำการลงทุน</li>
+                    <li>การตัดสินใจลงทุนและตั้งค่าบอท ถือเป็นความรับผิดชอบของผู้ใช้งานแต่เพียงผู้เดียว</li>
+                </ul>
+
+                <h4 class="text-brand-green font-bold text-lg mt-4">2. บัญชีผู้ใช้งานและความปลอดภัย</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>ผู้ใช้ต้องรักษา API Key อย่างปลอดภัยและ <b>ห้ามเปิดสิทธิ์การถอนเงิน (Withdraw)</b> บน Bitkub เด็ดขาด</li>
+                    <li>ทางแพลตฟอร์มจะไม่รับผิดชอบต่อความเสียหายที่เกิดจากการที่บัญชีของคุณถูกเข้าถึงโดยบุคคลที่สามอันเกิดจากความประมาทของผู้ใช้เอง</li>
+                </ul>
+
+                <h4 class="text-brand-green font-bold text-lg mt-4">3. ความเสี่ยงและการจำกัดความรับผิดชอบ</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>ตลาดคริปโตเคอร์เรนซีมีความผันผวนสูงมาก ระบบอาจไม่สามารถทำกำไรได้ในบางสภาวะตลาด และอาจทำให้เกิดการขาดทุนได้</li>
+                    <li>แพลตฟอร์มจะไม่รับผิดชอบต่อการขาดทุนหรือการเสียโอกาสที่เกิดจากความล่าช้า (Latency) ของ API, กระดานเทรดล่ม, หรือปัญหาอินเทอร์เน็ต</li>
+                </ul>
+
+                <h4 class="text-brand-green font-bold text-lg mt-4">4. การชำระเงินและขอคืนเงิน</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>เมื่อเริ่มใช้งานแพ็กเกจชำระเงินแล้ว ถือเป็นที่สิ้นสุด แพลตฟอร์มขอสงวนสิทธิ์ <b>ไม่คืนเงิน (No Refund)</b> ในทุกกรณี</li>
+                    <li>ผู้ใช้สามารถยกเลิกการต่ออายุแพ็กเกจได้ตลอดเวลา</li>
+                </ul>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-gray-800 flex justify-end bg-obsidian-800/50 rounded-b-2xl">
+                <button onclick="closeModal('tos-modal')" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">ปิดหน้าต่าง</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity">
+        <div class="bg-obsidian-900 border border-gray-700 rounded-2xl w-full max-w-3xl max-h-[85vh] flex flex-col shadow-2xl">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center p-6 border-b border-gray-800">
+                <h3 class="text-2xl font-bold text-white">นโยบายความเป็นส่วนตัว (Privacy Policy)</h3>
+                <button onclick="closeModal('privacy-modal')" class="text-gray-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="p-6 overflow-y-auto text-gray-300 space-y-4 text-sm md:text-base">
+                <p>เราให้ความสำคัญกับการปกป้องข้อมูลของคุณ เพื่อให้สอดคล้องกับ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA)</p>
+                
+                <h4 class="text-brand-green font-bold text-lg mt-4">1. ข้อมูลที่เรารวบรวม</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><b>ข้อมูลบัญชี:</b> อีเมล, รหัสผ่าน (เข้ารหัส Hashing), ข้อมูลตั้งค่า 2FA</li>
+                    <li><b>ข้อมูลการเชื่อมต่อ:</b> API Key และ Secret ของ Bitkub (ถูกเข้ารหัสขั้นสูงก่อนจัดเก็บ)</li>
+                    <li><b>ข้อมูลการใช้งาน:</b> ประวัติคำสั่งซื้อขายและการตั้งค่าบอทของผู้ใช้</li>
+                </ul>
+
+                <h4 class="text-brand-green font-bold text-lg mt-4">2. วัตถุประสงค์การใช้งานข้อมูล</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>เพื่อส่งคำสั่งซื้อขาย (Trade) ไปยังบัญชี Bitkub ของคุณตามที่คุณตั้งค่าไว้</li>
+                    <li>เพื่อประมวลผลข้อมูลราคาร่วมกับ AI ในการวิเคราะห์แนวโน้มตลาด (ข้อมูลที่ส่งให้ AI เป็นเพียงข้อมูลราคาตลาด ไม่มีข้อมูลบัญชีของคุณเจือปน)</li>
+                </ul>
+
+                <h4 class="text-brand-green font-bold text-lg mt-4">3. การเปิดเผยข้อมูล</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>เรา <b>ไม่มีนโยบายขาย ให้เช่า หรือเปิดเผย</b> ข้อมูลส่วนบุคคลของคุณแก่บุคคลที่สามเพื่อทำการตลาดโดยเด็ดขาด</li>
+                </ul>
+
+                <h4 class="text-brand-green font-bold text-lg mt-4">4. สิทธิของคุณ</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>คุณสามารถขอลบข้อมูลและลบบัญชีผู้ใช้งานได้อย่างถาวรทุกเมื่อ เมื่อบัญชีถูกลบ ข้อมูล API ทั้งหมดจะถูกลบออกจากฐานข้อมูลเราทันที</li>
+                </ul>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-gray-800 flex justify-end bg-obsidian-800/50 rounded-b-2xl">
+                <button onclick="closeModal('privacy-modal')" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">ปิดหน้าต่าง</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Modals -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // ป้องกันการไถลหน้าเว็บพื้นหลัง
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto'; // คืนค่าการไถลหน้าเว็บ
+        }
+
+        // กดพื้นที่ว่าง (สีดำ) นอกกรอบเพื่อปิด Modal ได้
+        window.onclick = function(event) {
+            const tosModal = document.getElementById('tos-modal');
+            const privacyModal = document.getElementById('privacy-modal');
+            if (event.target === tosModal) closeModal('tos-modal');
+            if (event.target === privacyModal) closeModal('privacy-modal');
+        }
+    </script>
+
 </body>
 </html>
-
-
